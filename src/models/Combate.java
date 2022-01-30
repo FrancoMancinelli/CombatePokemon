@@ -11,6 +11,7 @@ public class Combate {
 	private Pokemon pokemon2;
 	
 	//-----Constructores
+	@SuppressWarnings("static-access")
 	public Combate(Entrenador entrenador1, Entrenador entrenador2) {
 		super();
 		this.entrenador1 = entrenador1;

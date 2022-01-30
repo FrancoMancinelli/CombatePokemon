@@ -196,6 +196,7 @@ public class Pokemon {
 		do {
 			posible = true;
 			System.out.print("\n  • »» Respuesta: ");
+			@SuppressWarnings("resource")
 			Scanner sc = new Scanner (System.in);
 			resp = sc.next().toUpperCase();	
 			

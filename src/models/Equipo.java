@@ -8,6 +8,7 @@ public class Equipo {
 	private static ArrayList <Pokemon> equipoPokemones;
 
 	//-----Constructores
+	@SuppressWarnings("static-access")
 	public Equipo() {
 		super();
 		this.equipoPokemones = new ArrayList <Pokemon> ();

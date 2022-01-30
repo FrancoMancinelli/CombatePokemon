@@ -29,6 +29,7 @@ public class mainapp {
 		
 		do { //Pedirá una respuesta hasta que sea valida
 			System.out.print("\n  • »» Respuesta: ");
+			@SuppressWarnings("resource")
 			Scanner sc = new Scanner (System.in);
 			resp = sc.next().toUpperCase();
 			
@@ -120,6 +121,7 @@ public class mainapp {
 	 * @param e1 Equipo 1
 	 * @param e2 Equipo 2
 	 */
+	@SuppressWarnings("static-access")
 	public static void setPokemones(Equipo e1, Equipo e2) {
 		//Creo los movimientos de Charmander
 				Movimiento arañazo = new Movimiento("Arañazo", new TipoPokemon("Normal"), 20, 40, 0, 0, 0, 0, 0, new Estado("Ninguno"), Categoria.Fisico );
