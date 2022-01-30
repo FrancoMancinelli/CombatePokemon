@@ -134,7 +134,7 @@ public class mainapp {
 				Movimiento arañazo = new Movimiento("Arañazo", new TipoPokemon("Normal"), 20, 40, 0, 0, 0, 0, 0, new Estado("Ninguno"), Categoria.Fisico );
 				Movimiento gruñido = new Movimiento("Gruñido", new TipoPokemon("Normal"), 20, 0, 0, 1, 0, 0, 0, new Estado("Ninguno"), Categoria.Estado);
 				Movimiento ascuas = new Movimiento("Ascuas", new TipoPokemon("Fuego"), 15, 40, 0, 0, 0, 0, 0, new Estado("Quemado"), Categoria.Especial);
-				Movimiento danza_espada = new Movimiento("Danaza espada", new TipoPokemon("Normal"), 5, 0, 0, 0, 0, 0, 0, new Estado("Ninguno"), Categoria.Estado);
+				Movimiento danza_espada = new Movimiento("Danza espada", new TipoPokemon("Normal"), 5, 0, 0, 0, 0, 0, 0, new Estado("Ninguno"), Categoria.Estado);
 				
 				//Creo los movimientos de Squirtle
 				Movimiento placaje = new Movimiento("Placaje", new TipoPokemon("Normal"), 20, 40, 1, 1, 1, 1, 1, new Estado("Ninguno"), Categoria.Fisico);
