@@ -24,17 +24,7 @@ public class mainapp {
 	 */
 	public static void initialize() {	
 		
-		System.out.println("\n┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
-		System.out.println("┃░░░░░░░░░░░░░░░░░░░░ BATALLA POKEMON ░░░░░░░░░░░░░░░░░░░░┃");
-		System.out.println("┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫");
-		System.out.println("┃      Bienvenid@ a la Batalla Pokemon, a continuación    ┃");
-		System.out.println("┃                indica una opción del menú               ┃");
-		System.out.println("┃                                                         ┃");
-		System.out.println("┃ A »» Iniciar Combate [PvsP]                             ┃");
-		System.out.println("┃ B »» Iniciar Combate [PvsCPU]                           ┃");
-		System.out.println("┃ C »» Salir                                              ┃");
-		System.out.println("┃                                                         ┃");
-		System.out.println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
+		nuevaPartida();
 		String resp;
 		
 		do { //Pedirá una respuesta hasta que sea valida
@@ -61,7 +51,7 @@ public class mainapp {
 					break;
 			}
 		
-		} while(!resp.equals("A") && !resp.equals("B"));
+		} while(!resp.equals("C"));
 		
 		
 		
@@ -121,6 +111,7 @@ public class mainapp {
 				combate.aplicarMovimientoPlayer(combate.segundo().elegirMovimientoPlayer(), combate.segundo(), combate.primero());
 			}
 		}
+		nuevaPartida();
 	}
 	
 	/**
@@ -198,7 +189,24 @@ public class mainapp {
 				combate.aplicarMovimientoPlayer(combate.segundo().elegirMovimientoCPU(), combate.segundo(), combate.primero());
 			}
 		}
-		
+		nuevaPartida();
+	}
+	
+	/**
+	 * Imprime el panel de menú principal
+	 */
+	public static void nuevaPartida() {
+		System.out.println("\n┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
+		System.out.println("┃░░░░░░░░░░░░░░░░░░░░ BATALLA POKEMON ░░░░░░░░░░░░░░░░░░░░┃");
+		System.out.println("┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫");
+		System.out.println("┃      Bienvenid@ a la Batalla Pokemon, a continuación    ┃");
+		System.out.println("┃                indica una opción del menú               ┃");
+		System.out.println("┃                                                         ┃");
+		System.out.println("┃ A »» Iniciar Combate [PvsP]                             ┃");
+		System.out.println("┃ B »» Iniciar Combate [PvsCPU]                           ┃");
+		System.out.println("┃ C »» Salir                                              ┃");
+		System.out.println("┃                                                         ┃");
+		System.out.println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
 	}
 	
 	
