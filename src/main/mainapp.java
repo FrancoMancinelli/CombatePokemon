@@ -159,6 +159,9 @@ public class mainapp {
 				e2.getPokemonesArray().add(squirtle);
 	}
 	
+	/**
+	 * Crea un combate Pokemon de modalidad Player vs CPU
+	 */
 	public static void crearCombateCPU() {
 
 		//Creo ambos equipos

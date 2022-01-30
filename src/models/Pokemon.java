@@ -25,20 +25,6 @@ public class Pokemon {
 	
 	/**
 	 * Construye un Pokemon que sea de 2 tipos
-	 * @param numero
-	 * @param nombre
-	 * @param tipo1
-	 * @param tipo2
-	 * @param estado
-	 * @param attack
-	 * @param defense
-	 * @param specialAttack
-	 * @param specialDefense
-	 * @param speed
-	 * @param movimientos
-	 * @param maxHP
-	 * @param actualHP
-	 * @param level
 	 */
 	public Pokemon(int numero, String nombre, TipoPokemon tipo1, TipoPokemon tipo2, Estado estado, double attack,
 			double defense, double specialAttack, double specialDefense, double speed, ArrayList<Movimiento> movimientos,
@@ -62,19 +48,6 @@ public class Pokemon {
 	
 	/**
 	 * Construye un Pokemon que sea de 1 tipo
-	 * @param numero
-	 * @param nombre
-	 * @param tipo1
-	 * @param estado
-	 * @param attack
-	 * @param defense
-	 * @param specialAttack
-	 * @param specialDefense
-	 * @param speed
-	 * @param movimientos
-	 * @param maxHP
-	 * @param actualHP
-	 * @param level
 	 */
 	public Pokemon(int numero, String nombre, TipoPokemon tipo1, Estado estado, double attack,
 			double defense, double specialAttack, double specialDefense, double speed, ArrayList<Movimiento> movimientos,
@@ -209,6 +182,14 @@ public class Pokemon {
 	}
 	
 	//-----Métodos
+	
+	/**
+	 * Pide al usuario elegir un movimiento. Posterior a ello, en caso de
+	 * que el movimiento seleccionado tenga PP, indicará cual fue el movimiento 
+	 * seleccionado, el daño que inflinge, el estado que aplica y mostrará
+	 * cuanto daño recibe el oponente en caso de haber recibido un estado.
+	 * @return Movimiento elegido
+	 */
 	public Movimiento elegirMovimientoPlayer() {
 		String resp;
 		boolean posible;
@@ -220,7 +201,7 @@ public class Pokemon {
 			
 			switch (resp) {
 			
-			case "A":
+			case "A": //Elige el primer movimiento
 				if (movimientos.get(0).getActualPP() > 0) {
 				movimientos.get(0).setActualPP(movimientos.get(0).getActualPP()-1);
 				System.out.println("\n╭─────────────────────────────────────────────────────────╮");
@@ -231,7 +212,7 @@ public class Pokemon {
 					posible = false;
 				}
 				break;
-			case "B":
+			case "B": //Elige el segundo movimiento
 				if (movimientos.get(1).getActualPP() > 0) {
 					movimientos.get(1).setActualPP(movimientos.get(1).getActualPP()-1);
 					System.out.println("\n╭─────────────────────────────────────────────────────────╮");
@@ -242,7 +223,7 @@ public class Pokemon {
 						posible = false;
 					}
 				break;
-			case "C":
+			case "C": //Elige el tercer movimiento
 				if (movimientos.get(2).getActualPP() > 0) {
 					movimientos.get(2).setActualPP(movimientos.get(2).getActualPP()-1);
 					System.out.println("\n╭─────────────────────────────────────────────────────────╮");
@@ -253,7 +234,7 @@ public class Pokemon {
 						posible = false;
 					}
 				break;
-			case "D":
+			case "D": //Elige el cuarto movimiento
 				if (movimientos.get(3).getActualPP() > 0) {
 					movimientos.get(3).setActualPP(movimientos.get(3).getActualPP()-1);
 					System.out.println("\n╭─────────────────────────────────────────────────────────╮");
@@ -264,7 +245,7 @@ public class Pokemon {
 						posible = false;
 					}
 				break;
-			default:
+			default: //Imprime Err0r
 				err0rMenus();
 				posible = false;
 			}
@@ -272,6 +253,13 @@ public class Pokemon {
 		return null;
 	}
 	
+	/**
+	 * Método automático que hace elegir un movimiento a la CPU de manera aleatoria.
+	 * Posterior a ello, en caso de que el movimiento seleccionado tenga PP, indicará 
+	 * cual fue el movimiento seleccionado, el daño que inflinge, el estado que aplica 
+	 * y mostrara cuanto daño recibe el oponente en caso de haber recibido un estado.
+	 * @return Movimiento elegido
+	 */
 	public Movimiento elegirMovimientoCPU() {
 		int resp;
 		boolean posible;
@@ -281,7 +269,7 @@ public class Pokemon {
 
 			switch (resp) {
 			
-			case 1:
+			case 1: //Elige el primer movimiento
 				if (movimientos.get(0).getActualPP() > 0) {
 				movimientos.get(0).setActualPP(movimientos.get(0).getActualPP()-1);
 				System.out.println("\n  • »» Respuesta: A");
@@ -293,7 +281,7 @@ public class Pokemon {
 					posible = false;
 				}
 				break;
-			case 2:
+			case 2: //Elige el segundo movimiento
 				if (movimientos.get(1).getActualPP() > 0) {
 					movimientos.get(1).setActualPP(movimientos.get(1).getActualPP()-1);
 					System.out.println("\n  • »» Respuesta: B");
@@ -305,7 +293,7 @@ public class Pokemon {
 						posible = false;
 					}
 				break;
-			case 3:
+			case 3: //Elige el tercer movimiento
 				if (movimientos.get(2).getActualPP() > 0) {
 					movimientos.get(2).setActualPP(movimientos.get(2).getActualPP()-1);
 					System.out.println("\n  • »» Respuesta: C");
@@ -317,7 +305,7 @@ public class Pokemon {
 						posible = false;
 					}
 				break;
-			case 4:
+			case 4: //Elige el cuarto movimiento
 				if (movimientos.get(3).getActualPP() > 0) {
 					movimientos.get(3).setActualPP(movimientos.get(3).getActualPP()-1);
 					System.out.println("\n  • »» Respuesta: D");
@@ -334,6 +322,12 @@ public class Pokemon {
 		return null;
 	}
 	
+	/**
+	 * Imprime el panel de combate, muestra la HP de cada Pokemon junto a su nombre
+	 * Indica de quien es el turno y muestra los movimientos posibles con sus PP
+	 * @param p1 Pokemon 1
+	 * @param p2 Pokemon 2
+	 */
 	public void imprimePanel(Pokemon p1, Pokemon p2) {
 		System.out.println("\n┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
 		System.out.println("┃░░░░░░░░░░░░░░░░░░░ PANEL DE COMBATE ░░░░░░░░░░░░░░░░░░░░┃");
@@ -363,6 +357,9 @@ public class Pokemon {
 		System.out.println("╰―――――――――――――――――――――――――――――――――――――――――――――――――――――――――╯");
 	}
 	
+	/**
+	 * Imprime un error por haber indicado un movimiento que tiene 0 PP
+	 */
 	public static void err0rPP() {
 		System.out.println("\n╭─────────────────────────────────────────────────────────╮");
 		System.out.println("│ERR0R! >>>>   El movimiento seleccionado no   <<<< ERR0R!│ ");

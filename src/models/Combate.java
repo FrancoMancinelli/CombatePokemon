@@ -102,7 +102,7 @@ public class Combate {
 		}
 		System.out.print("\n    »» Estado Aplicado: "+atacado.getEstado().getNombre());
 
-		
+		//Comprueba que formula de daño utilizar según la categoría del movimiento
 		if(move.getCategoria().equals(Categoria.Fisico)) {
 			damage = (((((2 * atacante.getLevel()) / 5) + 2) * move.getDamage() * atacante.getAttack() / atacado.getDefense()) / 50) + 2;
 		} else if (move.getCategoria().equals(Categoria.Especial)) {
